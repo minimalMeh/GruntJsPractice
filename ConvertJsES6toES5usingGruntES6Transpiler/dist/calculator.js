@@ -1,5 +1,5 @@
 import {Add} from './add.js';
-import {Substract} from './substration.js';
+import {Substract} from './substraction.js';
 
 export class Calculator {
     AplusB (a , b) {
@@ -10,3 +10,8 @@ export class Calculator {
         return Substract(a, b);
     }
 }
+
+const calculator = new Calculator();
+
+const firstOperation = calculator.AminusB(10, 5);
+console.log(firstOperation);
