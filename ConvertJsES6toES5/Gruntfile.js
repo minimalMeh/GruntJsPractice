@@ -1,23 +1,34 @@
 module.exports = function(grunt) {
-    require('load-grunt-tasks')(grunt);
+    //require('load-grunt-tasks')(grunt);
 
     grunt.initConfig({
-      browserify: {
-        task0: {
-          files: [{
-            "expand": true,
-            "src": ["dist/calculator.js"],
-            "dest": "js-compiled",
-            "ext": "-compiled.js"
-           }],
+        babel: {
             options: {
-                transform: [
-                  ['babelify', { presets: "es2015" }]
-                ]
+                "sourceMap": true
+            },
+            dist: {
+                files: [{
+                    "expand": true,
+                    "src": ["dist/calculator.js"],
+                    "dest": "js-compiled",
+                    "ext": "-compiled.js"
+                }]
             }
+        //task0: {
+        //  files: [{
+        //    "expand": true,
+        //    "src": ["dist/calculator.js"],
+        //    "dest": "js-compiled",
+        //    "ext": "-compiled.js"
+        //   }],
+        //   options: {
+        //      transform: [
+        //        ['babelify', { presets: "es2015" }]
+        //      ]
+        //   }
+        
         }
-    }
     });
-
-    grunt.registerTask('default', ['browserify:task0']);
+    grunt.loadNpmTasks('grunt-babel');
+    grunt.registerTask('default', ['babel']);
 }
