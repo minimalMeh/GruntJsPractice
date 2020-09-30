@@ -1,6 +1,6 @@
 {
-  "name": "convertjses6toes5usinggrunt",
-  "version": "1.0.0",
+  "name": "convertes6toes5",
+  "version": "1.0.2",
   "description": "my practice in es6 to es5",
   "main": "index.js",
   "scripts": {
