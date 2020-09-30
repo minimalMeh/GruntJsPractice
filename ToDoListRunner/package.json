@@ -1,0 +1,23 @@
+{
+  "name": "todolistrunner",
+  "version": "1.0.0",
+  "description": "my practice in es6 to es5",
+  "main": "index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minimalMeh/GruntJsPractice.git"
+  },
+  "author": "minimalMeh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/minimalMeh/GruntJsPractice/issues"
+  },
+  "homepage": "https://github.com/minimalMeh/GruntJsPractice#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "1.0.1"
+  },
+  "dependencies": {}
+}
