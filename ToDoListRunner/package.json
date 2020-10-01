@@ -16,7 +16,8 @@
   "homepage": "https://github.com/minimalMeh/GruntJsPractice#readme",
   "devDependencies": {
     "grunt": "^1.0.1",
-    "grunt-contrib-concat": "1.0.1"
+    "grunt-contrib-concat": "1.0.1",
+    "grunt-contrib-copy": "^1.0.0"
   },
   "dependencies": {}
 }

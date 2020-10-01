@@ -10,10 +10,23 @@ module.exports = function(grunt) {
               src: ['../TODOLIST/*.js'],
               dest: 'dist/built.js',
             }
+        },
+        copy: {
+          task_d: {
+            src: 'dist/*',
+            dest: 'dest/',
+            expand: true,
+            options: {
+              process: function (content, srcpath) {
+                return content.replace(/[ ]/g, '');
+              },
+            },
+          }
         }
     });
     
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
-    grunt.registerTask('default', ['concat']);
+    grunt.registerTask('default', ['concat', 'copy:task_d']);
 }
