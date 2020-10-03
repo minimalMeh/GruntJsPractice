@@ -22,11 +22,22 @@ module.exports = function(grunt) {
               },
             },
           }
-        }
+        },
+        watch: {
+          scripts: {
+            options: {
+              spawn: false,
+              event: ['changed']
+            },
+            files: ['../TODOLIST/*.js'],
+            tasks: ['concat'],
+          },
+        },
     });
     
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.registerTask('default', ['concat', 'copy:task_d']);
 }
