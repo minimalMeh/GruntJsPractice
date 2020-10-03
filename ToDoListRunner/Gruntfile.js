@@ -33,11 +33,27 @@ module.exports = function(grunt) {
             tasks: ['concat'],
           },
         },
+        cssmin: {
+          options: {
+            mergeIntoShorthands: false,
+            roundingPrecision: -1
+          },
+          target: {
+            files: [{
+              expand: true,
+              cwd: '../TODOLIST',
+              src: ['*.css', '!*.min.css'],
+              dest: 'cssminfolder',
+              ext: '.min.css'
+            }]
+          }
+        },
     });
     
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
 
     grunt.registerTask('default', ['concat', 'copy:task_d']);
 }
