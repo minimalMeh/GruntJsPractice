@@ -43,17 +43,26 @@ module.exports = function(grunt) {
               expand: true,
               cwd: '../TODOLIST',
               src: ['*.css', '!*.min.css'],
-              dest: 'cssminfolder',
+              dest: 'dist',
               ext: '.min.css'
             }]
           }
         },
+        // we know that uglify supports only es5, so I'm taking it from folder with es5
+        uglify: {
+          my_target: {
+            files: {
+              'dist/uglified.min.js': ['../ConvertJsES6toES5/js-compiled/dist/calculator-compiled.js']
+            }
+          }
+        }
     });
     
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
     grunt.registerTask('default', ['concat', 'copy:task_d']);
 }
